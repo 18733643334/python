@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="28f9141c-862a-4dda-80fd-56565ed54500" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f22tlWUFqOHYz3ovG68kS3rONQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/tkinter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/xlsxwriter" />
+      <recent name="$PROJECT_DIR$/pandas/20200818" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.work1">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tkinter/pages" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tkinter/pages/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rzsj" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work/rzsj.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="work1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/2021-07-19work" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2021-07-19work/work1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="wzry" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pachong" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pachong/wzry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xiyy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="python3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pachong" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pachong/xiyy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.work1" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.xiyy" />
+        <item itemvalue="Python.wzry" />
+        <item itemvalue="Python.rzsj" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28f9141c-862a-4dda-80fd-56565ed54500" name="默认更改列表" comment="" />
+      <created>1595402083684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595402083684</updated>
+      <workItem from="1595402087396" duration="1346000" />
+      <workItem from="1595473606227" duration="3553000" />
+      <workItem from="1595496175018" duration="906000" />
+      <workItem from="1595844768790" duration="8000" />
+      <workItem from="1596610350952" duration="9869000" />
+      <workItem from="1596686108582" duration="3021000" />
+      <workItem from="1597289366634" duration="200000" />
+      <workItem from="1597374527623" duration="2280000" />
+      <workItem from="1597807998095" duration="11875000" />
+      <workItem from="1597906813571" duration="1359000" />
+      <workItem from="1597977680212" duration="474000" />
+      <workItem from="1598238918760" duration="9585000" />
+      <workItem from="1598582898935" duration="2779000" />
+      <workItem from="1598598061417" duration="835000" />
+      <workItem from="1599622593888" duration="4000" />
+      <workItem from="1599636022292" duration="2271000" />
+      <workItem from="1599795137131" duration="214000" />
+      <workItem from="1599795409085" duration="3147000" />
+      <workItem from="1600313733715" duration="12000" />
+      <workItem from="1600399906777" duration="1747000" />
+      <workItem from="1601196118103" duration="9000" />
+      <workItem from="1603764771996" duration="9778000" />
+      <workItem from="1603856312808" duration="229000" />
+      <workItem from="1603870099250" duration="259000" />
+      <workItem from="1603939058510" duration="406000" />
+      <workItem from="1604372205213" duration="160000" />
+      <workItem from="1604374101074" duration="909000" />
+      <workItem from="1604397275738" duration="5387000" />
+      <workItem from="1604476179940" duration="2030000" />
+      <workItem from="1604544423557" duration="406000" />
+      <workItem from="1604628355073" duration="121000" />
+      <workItem from="1604630679720" duration="540000" />
+      <workItem from="1604644005962" duration="1045000" />
+      <workItem from="1605236623108" duration="3519000" />
+      <workItem from="1605257604469" duration="1027000" />
+      <workItem from="1617851466788" duration="8006000" />
+      <workItem from="1618543147265" duration="2654000" />
+      <workItem from="1618547012960" duration="667000" />
+      <workItem from="1620275746843" duration="2136000" />
+      <workItem from="1620874447864" duration="1738000" />
+      <workItem from="1620975493178" duration="7374000" />
+      <workItem from="1621415168063" duration="15000" />
+      <workItem from="1621564967184" duration="968000" />
+      <workItem from="1621830409346" duration="2976000" />
+      <workItem from="1621912317619" duration="224000" />
+      <workItem from="1622170604584" duration="3147000" />
+      <workItem from="1622202074491" duration="35000" />
+      <workItem from="1622794964509" duration="44000" />
+      <workItem from="1626663308851" duration="2442000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2237" y="226" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622172808145">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state x="2237" y="226" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1622172808145" />
+    <state x="2187" y="178" key="FileChooserDialogImpl" timestamp="1622171632440">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state x="2187" y="178" key="FileChooserDialogImpl/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1622171632440" />
+    <state width="1878" height="474" key="GridCell.Tab.0.bottom" timestamp="1626668147891">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="474" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626666978826" />
+    <state width="1876" height="474" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1622192677745" />
+    <state width="1878" height="474" key="GridCell.Tab.0.bottom/0.25.1440.875/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626668147891" />
+    <state width="1878" height="474" key="GridCell.Tab.0.center" timestamp="1626668147890">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="474" key="GridCell.Tab.0.center/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626666978824" />
+    <state width="1876" height="474" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1622192677743" />
+    <state width="1878" height="474" key="GridCell.Tab.0.center/0.25.1440.875/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626668147890" />
+    <state width="1878" height="474" key="GridCell.Tab.0.left" timestamp="1626668147889">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="474" key="GridCell.Tab.0.left/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626666978823" />
+    <state width="1876" height="474" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1622192677742" />
+    <state width="1878" height="474" key="GridCell.Tab.0.left/0.25.1440.875/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626668147889" />
+    <state width="1878" height="474" key="GridCell.Tab.0.right" timestamp="1626668147891">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state width="1878" height="474" key="GridCell.Tab.0.right/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626666978825" />
+    <state width="1876" height="474" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1622192677744" />
+    <state width="1878" height="474" key="GridCell.Tab.0.right/0.25.1440.875/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626668147891" />
+    <state x="1908" y="57" key="SettingsEditor" timestamp="1626668104073">
+      <screen x="1440" y="-179" width="1920" height="1200" />
+    </state>
+    <state x="1908" y="57" key="SettingsEditor/0.0.1440.900/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1626668104073" />
+    <state x="1908" y="57" key="SettingsEditor/0.25.1440.875/1440.-179.1920.1200@1440.-179.1920.1200" timestamp="1622173323534" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/python3$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1604630954857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pachong" />
+    <SUITE FILE_PATH="coverage/python3$line_test.coverage" NAME="line_test Coverage Results" MODIFIED="1620282275912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas/20210506" />
+    <SUITE FILE_PATH="coverage/python3$tkinter1.coverage" NAME="tkinter1 Coverage Results" MODIFIED="1596612707187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python3$mov_info.coverage" NAME="mov_info Coverage Results" MODIFIED="1620978841217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/video" />
+    <SUITE FILE_PATH="coverage/python3$work1.coverage" NAME="work1 Coverage Results" MODIFIED="1626666809006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2021-07-19work" />
+    <SUITE FILE_PATH="coverage/python3$tk4.coverage" NAME="tk4 Coverage Results" MODIFIED="1596687496144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tkinter" />
+    <SUITE FILE_PATH="coverage/python3$main.coverage" NAME="main Coverage Results" MODIFIED="1622794986056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tkinter/pages" />
+    <SUITE FILE_PATH="coverage/python3$read_ex.coverage" NAME="read_ex Coverage Results" MODIFIED="1599810222130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas/pandas_test" />
+    <SUITE FILE_PATH="coverage/python3$numpy1.coverage" NAME="numpy1 Coverage Results" MODIFIED="1595498679750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python3$project_shots.coverage" NAME="project_shots Coverage Results" MODIFIED="1617869056281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas/20210408" />
+    <SUITE FILE_PATH="coverage/python3$tk2.coverage" NAME="tk2 Coverage Results" MODIFIED="1596612817529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python3$p1.coverage" NAME="p1 Coverage Results" MODIFIED="1600403032277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/reptiles" />
+    <SUITE FILE_PATH="coverage/python3$pandas_doc.coverage" NAME="pandas_doc Coverage Results" MODIFIED="1600403749663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$down_mov.coverage" NAME="down_mov Coverage Results" MODIFIED="1620876772856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pachong" />
+    <SUITE FILE_PATH="coverage/python3$imgExcel__1_.coverage" NAME="imgExcel (1) Coverage Results" MODIFIED="1598598318569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xlsxwriter" />
+    <SUITE FILE_PATH="coverage/python3$getEximg.coverage" NAME="getEximg Coverage Results" MODIFIED="1598242430877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$pexce.coverage" NAME="pexce Coverage Results" MODIFIED="1597377110494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$asset_info.coverage" NAME="asset_info Coverage Results" MODIFIED="1618545224149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$shot_info.coverage" NAME="shot_info Coverage Results" MODIFIED="1618547029171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$task_data_excel.coverage" NAME="task_data_excel Coverage Results" MODIFIED="1604461444117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/2020-11-03work" />
+    <SUITE FILE_PATH="coverage/python3$xiyy.coverage" NAME="xiyy Coverage Results" MODIFIED="1622172741785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pachong" />
+    <SUITE FILE_PATH="coverage/python3$rzsj.coverage" NAME="rzsj Coverage Results" MODIFIED="1621838422923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work" />
+    <SUITE FILE_PATH="coverage/python3$test.coverage" NAME="test Coverage Results" MODIFIED="1618545540813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work" />
+    <SUITE FILE_PATH="coverage/python3$tk3.coverage" NAME="tk3 Coverage Results" MODIFIED="1596616284857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tkinter" />
+    <SUITE FILE_PATH="coverage/python3$wzry.coverage" NAME="wzry Coverage Results" MODIFIED="1622170616154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pachong" />
+    <SUITE FILE_PATH="coverage/python3$imgExcel.coverage" NAME="imgExcel Coverage Results" MODIFIED="1597911852474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pandas" />
+    <SUITE FILE_PATH="coverage/python3$excel.coverage" NAME="excel Coverage Results" MODIFIED="1604481055396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/work" />
+  </component>
+</project>

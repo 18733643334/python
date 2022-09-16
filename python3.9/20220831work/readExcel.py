@@ -170,7 +170,7 @@ class ReadExcel:
 
 
 if __name__ == "__main__":
-    project_byname = ['MOB']
+    project_byname = ['XYL']
     for byname in project_byname:
         ReadExcel().run(byname)
     print('complete')

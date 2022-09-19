@@ -1,15 +1,15 @@
 from common.model import Table
-from model.mainTask import MainTask
-from model.childTask import ChildTask
-from model.version import Version
+from common.model.mainTask import MainTask
+from common.model.childTask import ChildTask
+from common.model.version import Version
 
 fields = MainTask().get_columns()
 fields.pop(0)
 child_task_columns = ChildTask().get_columns()
 child_task_columns.pop(0)
 
-from model.versionStatusRecord import VersionStatusRecord
-from model.taskStatusRecord import TaskStatusRecord
+from common.model.versionStatusRecord import VersionStatusRecord
+from common.model.taskStatusRecord import TaskStatusRecord
 
 
 def clen_project_task(project_id):

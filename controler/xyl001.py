@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from model.shot import Shot
+from common.model.shot import Shot
 import pandas as pd
 import numpy as np
 

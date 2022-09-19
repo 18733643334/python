@@ -169,7 +169,6 @@ class ReadExcel:
 
     def set_percentage_color(self, x):
         val = float(x[:-1])
-        color = ''
         if (val > 0) and (val <= 20):
             color = '#BFE2AF'
         elif (val > 20) and (val <= 40):

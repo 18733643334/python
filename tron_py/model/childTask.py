@@ -6,3 +6,4 @@ class ChildTask(Model):
         super().__init__()
         self.table_name = "child_task"
         self.table()
+

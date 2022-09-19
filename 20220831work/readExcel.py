@@ -21,8 +21,8 @@ class ReadExcel:
         self.save_path = ''
 
     def set_file(self, b_name):
-        self.file_path = '/All/%s/Doc/shot/' % b_name
-        self.save_path = '/All/%s/References/tmp/' % b_name
+        self.file_path = '/Users/shihongxiao/Desktop/All/%s/Doc/shot/' % b_name
+        self.save_path = '/Users/shihongxiao/Desktop/All/%s/References/tmp/' % b_name
 
     def read_file(self):
         file_names = os.listdir(self.file_path)
@@ -132,7 +132,7 @@ class ReadExcel:
         df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
             "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
             "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度'])
+            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(**{"font-size": "30px", "border-color": '#FFFF2E'})
         df.to_excel(self.new_file_path, index=False)
 
     def get_u_field(self):
@@ -180,6 +180,8 @@ class ReadExcel:
             color = '#44cef6'
         elif (val > 80) and (val <= 100):
             color = '#93C2EA'
+        else:
+            color = '#ffffff'
         return "background-color: {}".format(color)
 
 

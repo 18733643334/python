@@ -221,21 +221,14 @@ data = [
 ]
 df3 = pd.DataFrame(data, columns=columns)
 
-# df3 = df3.style.applymap(set_background_color, subset=['Test_3']).set_properties(
-#     **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"}).set_caption(
-#     '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
+df3 = df3.style.set_properties(
+    **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"})
 
 # df3 = df3.style.set_properties(
 #     **{"border-color": "yellow", "font-size": "20px", "color": "red"}).set_caption(
 #     '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
 
-def add_str(x):
-    x = str(x)
-    return x+'{}'.format('%')
 
-df3 = df3.style.background_gradient(cmap=cm, subset=['Test_3'])
-df3 = df3.data['Test_3'].applymap(add_str)
-
-df3.to_excel('aaa.xlsx', index=False)
+df3.to_excel('aaa.xlsx', index=False, engine='openpyxl')
 
 print('ok')

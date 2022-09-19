@@ -1,15 +1,15 @@
-from common.model import Table
-from common.model.mainTask import MainTask
-from common.model.childTask import ChildTask
-from common.model.version import Version
+from tron_py.common.model import Table
+from tron_py.common.model import MainTask
+from tron_py.common.model import ChildTask
+from tron_py.common.model import Version
 
 fields = MainTask().get_columns()
 fields.pop(0)
 child_task_columns = ChildTask().get_columns()
 child_task_columns.pop(0)
 
-from common.model.versionStatusRecord import VersionStatusRecord
-from common.model.taskStatusRecord import TaskStatusRecord
+from tron_py.common.model import VersionStatusRecord
+from tron_py.common.model import TaskStatusRecord
 
 
 def clen_project_task(project_id):

@@ -1,5 +1,5 @@
 
-from common.model import Model
+from tron_py.common.model import Model
 
 class MainTask(Model):
     def __init__(self):

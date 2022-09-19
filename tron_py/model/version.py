@@ -1,10 +1,10 @@
-from common.model import Model
+from tron_py.common.model import Model
 
 
-class VersionStatusRecord(Model):
+class Version(Model):
     def __init__(self):
         super().__init__()
-        self.table_name = "version_record"
+        self.table_name = "version"
         self.table()
 
     # 更新数据的任务id

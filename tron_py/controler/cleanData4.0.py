@@ -1,7 +1,5 @@
 # coding:utf-8
-import pymysql, sys,datetime
-from concurrent.futures import ThreadPoolExecutor
-from common.model import DataBaseHandle
+from tron_py.common.model import DataBaseHandle
 
 
 # 获取项目ID return []

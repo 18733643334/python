@@ -195,20 +195,20 @@ import seaborn as sns
 def set_background_color(col):
     val = float(col[:-1])
     color = ''
-    if val > 0 and val < 20:
+    if (val > 0) and (val <= 20):
         color = '#BFE2AF'
-    elif val > 20 and val < 40:
+    elif (val > 20) and (val <= 40):
         color = '#a3ebaa'
-    elif val > 40 and val < 60:
+    elif (val > 40) and (val <= 60):
         color = '#70f3ff'
-    elif val > 60 and val < 80:
+    elif (val > 60) and (val <= 80):
         color = '#44cef6'
-    elif val > 80 and val < 100:
+    elif (val > 80) and (val <= 100):
         color = '#93C2EA'
-    return "background-color: {color}".format(color=color)
+    return "background-color: {}".format(color)
 
 
-cm = sns.light_palette('green', as_cmap=True)
+cm = sns.light_palette('#FFFF2E', as_cmap=True)
 
 columns = ['场号', '公司名称', '镜头总数', '完成数', '未完成数', 'Test_3']
 data = [
@@ -225,8 +225,17 @@ df3 = pd.DataFrame(data, columns=columns)
 #     **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"}).set_caption(
 #     '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
 
-df3 = df3.style.set_properties(
-    **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"}).set_caption(
-    '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
+# df3 = df3.style.set_properties(
+#     **{"border-color": "yellow", "font-size": "20px", "color": "red"}).set_caption(
+#     '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
+
+def add_str(x):
+    x = str(x)
+    return x+'{}'.format('%')
+
+df3 = df3.style.background_gradient(cmap=cm, subset=['Test_3'])
+df3 = df3.data['Test_3'].applymap(add_str)
 
 df3.to_excel('aaa.xlsx', index=False)
+
+print('ok')

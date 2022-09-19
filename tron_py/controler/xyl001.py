@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from common.model.shot import Shot
+from tron_py.common.model import Shot
 import pandas as pd
 import numpy as np
 

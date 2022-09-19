@@ -132,8 +132,7 @@ class ReadExcel:
         df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
             "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
             "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-            "background-color": "#FED563"}).set_properties(subset=['完成进度'], **{
-            "background-color": "#FFFF2E"})
+            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度'])
         df.to_excel(self.new_file_path, index=False)
 
     def get_u_field(self):
@@ -167,6 +166,21 @@ class ReadExcel:
         date = time.strftime("%m-%d", t)
         name = 'outsource' + str(date)
         self.new_file_path = self.save_path + '/%s.xlsx' % name
+
+    def set_percentage_color(self, x):
+        val = float(x[:-1])
+        color = ''
+        if (val > 0) and (val <= 20):
+            color = '#BFE2AF'
+        elif (val > 20) and (val <= 40):
+            color = '#a3ebaa'
+        elif (val > 40) and (val <= 60):
+            color = '#70f3ff'
+        elif (val > 60) and (val <= 80):
+            color = '#44cef6'
+        elif (val > 80) and (val <= 100):
+            color = '#93C2EA'
+        return "background-color: {}".format(color)
 
 
 if __name__ == "__main__":

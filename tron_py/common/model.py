@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import pymysql, sys
-import common.config as conf
+import tron_py.common.config as conf
 
 
 class DataBaseHandle(object):

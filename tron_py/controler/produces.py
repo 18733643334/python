@@ -1,7 +1,7 @@
-from common.model.mainTask import MainTask
-from common.model import Table
-from common.model.childTask import ChildTask
-from common.model.user import User
+from tron_py.common.model import MainTask
+from tron_py.common.model import Table
+from tron_py.common.model import ChildTask
+from tron_py.common.model import User
 import json
 
 # master_task = MainTask().where('produces', '=', "''").field('id').select()

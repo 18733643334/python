@@ -1,4 +1,4 @@
-from common.model import Model
+from tron_py.common.model import Model
 
 
 class User(Model):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from common.model import Model
+from tron_py.common.model import Model
 
 
 class Shot(Model):

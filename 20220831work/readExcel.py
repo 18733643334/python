@@ -132,7 +132,7 @@ class ReadExcel:
         df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
             "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
             "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(**{"font-size": "30px", "border-color": '#FFFF2E'})
+            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(**{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
         df.to_excel(self.new_file_path, index=False)
 
     def get_u_field(self):

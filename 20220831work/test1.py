@@ -189,46 +189,68 @@ files = ['/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_031shotInfo_v0101.xls
 #         i.replace("\x1d", '')
 # print(a)
 
-import seaborn as sns
+# import seaborn as sns
+#
+#
+# def set_background_color(col):
+#     val = float(col[:-1])
+#     color = ''
+#     if (val > 0) and (val <= 20):
+#         color = '#BFE2AF'
+#     elif (val > 20) and (val <= 40):
+#         color = '#a3ebaa'
+#     elif (val > 40) and (val <= 60):
+#         color = '#70f3ff'
+#     elif (val > 60) and (val <= 80):
+#         color = '#44cef6'
+#     elif (val > 80) and (val <= 100):
+#         color = '#93C2EA'
+#     return "background-color: {}".format(color)
+#
+#
+# cm = sns.light_palette('#FFFF2E', as_cmap=True)
+#
+# columns = ['场号', '公司名称', '镜头总数', '完成数', '未完成数', 'Test_3']
+# data = [
+#     ['002', 'QY', 315, 122, 193, 89.2],
+#     ['001', '金波', 94, 23534, 344, 2.67],
+#     ['003', '金波', 2, 234, 434, 26.7],
+#     ['001', '金波', 44, 153254, 14, 47.67],
+#     ['003', '金波', 54, 13, 244, 68.67],
+#     ['002', '金波', 14, 564, 54764, 0],
+# ]
+# df3 = pd.DataFrame(data, columns=columns)
 
-
-def set_background_color(col):
-    val = float(col[:-1])
-    color = ''
-    if (val > 0) and (val <= 20):
-        color = '#BFE2AF'
-    elif (val > 20) and (val <= 40):
-        color = '#a3ebaa'
-    elif (val > 40) and (val <= 60):
-        color = '#70f3ff'
-    elif (val > 60) and (val <= 80):
-        color = '#44cef6'
-    elif (val > 80) and (val <= 100):
-        color = '#93C2EA'
-    return "background-color: {}".format(color)
-
-
-cm = sns.light_palette('#FFFF2E', as_cmap=True)
-
-columns = ['场号', '公司名称', '镜头总数', '完成数', '未完成数', 'Test_3']
-data = [
-    ['002', 'QY', 315, 122, 193, 89.2],
-    ['001', '金波', 94, 23534, 344, 2.67],
-    ['003', '金波', 2, 234, 434, 26.7],
-    ['001', '金波', 44, 153254, 14, 47.67],
-    ['003', '金波', 54, 13, 244, 68.67],
-    ['002', '金波', 14, 564, 54764, 0],
-]
-df3 = pd.DataFrame(data, columns=columns)
-
-df3 = df3.style.set_properties(
-    **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"})
+# df3 = df3.style.set_properties(
+#     **{"border-color": "yellow", "width": "1000px", "font-size": "20px", "color": "red"})
 
 # df3 = df3.style.set_properties(
 #     **{"border-color": "yellow", "font-size": "20px", "color": "red"}).set_caption(
 #     '测试21341').background_gradient(cmap=cm, subset=['Test_3'])
 
 
-df3.to_excel('aaa.xlsx', index=False, engine='openpyxl')
+# df3.to_excel('aaa.xlsx', index=False, engine='openpyxl')
+#
+# print('ok')
 
-print('ok')
+# df3.plot(kind='bar')
+# plt.show()
+
+# -*-coding utf-8 -*-
+import matplotlib.pyplot as plt
+
+plt.rcParams['font.sans-serif'] = ['Simhei']
+plt.rcParams['axes.unicode_minus'] = False
+
+columns = [u'场号', u'公司名称', u'镜头总数', u'完成数', u'未完成数', u'Test_3']
+data = [
+    ['002', 'QY', 315, 122, 193, '89.2%'],
+    ['001', '金波', 94, 234, 344, '2.67%'],
+    ['003', '金波', 2, 234, 434, '26.7%'],
+    ['001', '金波', 44, 1554, 14, '47.67%'],
+    ['003', '金波', 54, 13, 244, '68.67%'],
+    ['002', '金波', 14, 564, 544, '0%'],
+]
+df4 = pd.DataFrame(data, columns=columns)
+df4.plot(x='公司名称', y=['镜头总数', '完成数', '未完成数', 'Test_3'], kind='bar')
+plt.savefig('aaa.png')

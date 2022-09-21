@@ -237,20 +237,33 @@ files = ['/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_031shotInfo_v0101.xls
 # plt.show()
 
 # -*-coding utf-8 -*-
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+#
+# plt.rcParams['font.sans-serif'] = ['Simhei']
+# plt.rcParams['axes.unicode_minus'] = False
+#
+# columns = [u'场号', u'公司名称', u'镜头总数', u'完成数', u'未完成数', u'Test_3']
+# data = [
+#     ['002', 'QY', 315, 122, 193, '89.2%'],
+#     ['001', '金波', 94, 234, 344, '2.67%'],
+#     ['003', '金波', 2, 234, 434, '26.7%'],
+#     ['001', '金波', 44, 1554, 14, '47.67%'],
+#     ['003', '金波', 54, 13, 244, '68.67%'],
+#     ['002', '金波', 14, 564, 544, '0%'],
+# ]
+# df4 = pd.DataFrame(data, columns=columns)
+# df4.plot(x='公司名称', y=['镜头总数', '完成数', '未完成数', 'Test_3'], kind='bar')
+# plt.savefig('aaa.png')
 
-plt.rcParams['font.sans-serif'] = ['Simhei']
-plt.rcParams['axes.unicode_minus'] = False
 
-columns = [u'场号', u'公司名称', u'镜头总数', u'完成数', u'未完成数', u'Test_3']
-data = [
-    ['002', 'QY', 315, 122, 193, '89.2%'],
-    ['001', '金波', 94, 234, 344, '2.67%'],
-    ['003', '金波', 2, 234, 434, '26.7%'],
-    ['001', '金波', 44, 1554, 14, '47.67%'],
-    ['003', '金波', 54, 13, 244, '68.67%'],
-    ['002', '金波', 14, 564, 544, '0%'],
-]
-df4 = pd.DataFrame(data, columns=columns)
-df4.plot(x='公司名称', y=['镜头总数', '完成数', '未完成数', 'Test_3'], kind='bar')
-plt.savefig('aaa.png')
+import sys, os
+
+files = os.listdir('/Users/shihongxiao/Desktop/All/MOB/Doc/shot')
+
+for f in files:
+    if '-' in f:
+        ff = f.split('-')
+        n_f_n = '{}.xlsx'.format(ff[0])
+        old_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(f)
+        new_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(n_f_n)
+        os.rename(old_n, new_n)

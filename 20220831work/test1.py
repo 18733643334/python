@@ -267,3 +267,11 @@ for f in files:
         old_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(f)
         new_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(n_f_n)
         os.rename(old_n, new_n)
+
+# [nan '002' '002003' '擦鱼线' nan 'ok' nan nan nan nan nan nan 'D' nan nan 60
+#  '宇玺妍开' 'hd' nan nan nan '002_003316' 'mob002003_prd_hd_mov2k_v0101' nan
+#  nan 'mob002003_cmp_yxyk_pre_v0101' 20220703 20220812 nan]
+#
+# [nan 1 '001003' '双枫崖场景延伸\n人物闪现威亚擦除' nan 'ok' nan nan nan nan nan nan 'C'
+#  18 nan 18 '蝉影' nan nan nan '001_002718' 'mob001003_prd_cy_mov2k_v0101'
+#  nan nan 'mob001003_cmp_CYDH_pre_v0011' 20220913 nan nan nan]

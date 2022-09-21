@@ -49,6 +49,8 @@ class ReadExcel:
                 continue
             field_num = self.get_field_num(excel_file)
             company_names = self.get_company(excel_array)
+            if len(company_names) == 0:
+                continue
             for company in company_names:
                 adopt_num = 0
                 fail_num = 0
@@ -84,38 +86,39 @@ class ReadExcel:
         return field
 
     def create_data_frame(self):
-        data = []
-        shot_total_num = 0
-        shot_adopt_num = 0
-        shot_fail_num = 0
-        for i in self.company_data:
+        if self.company_data:
+            data = []
+            shot_total_num = 0
+            shot_adopt_num = 0
+            shot_fail_num = 0
+            for i in self.company_data:
+                arr = []
+                arr.append(i['field'])
+                arr.append(i['company_name'])
+                total_num = i['adopt_num'] + i['fail_num']
+                shot_total_num += total_num
+                shot_adopt_num += i['adopt_num']
+                shot_fail_num += i['fail_num']
+                arr.append(total_num)
+                arr.append(i['adopt_num'])
+                arr.append(i['fail_num'])
+                progress = round(i['adopt_num'] / total_num, 2) * 100
+                progress = int(progress)
+                progress = "%s%%" % progress
+                arr.append(progress)
+                data.append(arr)
             arr = []
-            arr.append(i['field'])
-            arr.append(i['company_name'])
-            total_num = i['adopt_num'] + i['fail_num']
-            shot_total_num += total_num
-            shot_adopt_num += i['adopt_num']
-            shot_fail_num += i['fail_num']
-            arr.append(total_num)
-            arr.append(i['adopt_num'])
-            arr.append(i['fail_num'])
-            progress = round(i['adopt_num'] / total_num, 2) * 100
-            progress = int(progress)
-            progress = "%s%%" % progress
-            arr.append(progress)
+            arr.append('总')
+            arr.append('')
+            arr.append(shot_total_num)
+            arr.append(shot_adopt_num)
+            arr.append(shot_fail_num)
+            shot_progress = round(shot_adopt_num / shot_total_num, 2) * 100
+            shot_progress = int(shot_progress)
+            shot_progress = "%s%%" % shot_progress
+            arr.append(shot_progress)
             data.append(arr)
-        arr = []
-        arr.append('总')
-        arr.append('')
-        arr.append(shot_total_num)
-        arr.append(shot_adopt_num)
-        arr.append(shot_fail_num)
-        shot_progress = round(shot_adopt_num / shot_total_num, 2) * 100
-        shot_progress = int(shot_progress)
-        shot_progress = "%s%%" % shot_progress
-        arr.append(shot_progress)
-        data.append(arr)
-        self.new_data = data
+            self.new_data = data
 
     def run(self, byname: {str}):
         self.set_file(byname)
@@ -125,15 +128,18 @@ class ReadExcel:
         self.data_to_ex()
 
     def data_to_ex(self):
-        self.frame_data = pd.DataFrame(self.new_data,
-                                       columns=['场号', '公司名称', '镜头总数', '完成数', '未完成数', '完成进度']).sort_values(
-            by='场号')
-        self.set_column_link()
-        df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
-            "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
-            "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-            "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(**{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
-        df.to_excel(self.new_file_path, index=False)
+        if self.new_data:
+            self.frame_data = pd.DataFrame(self.new_data,
+                                           columns=['场号', '公司名称', '镜头总数', '完成数', '未完成数', '完成进度']).sort_values(
+                by='场号')
+            self.set_column_link()
+            df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
+                "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
+                "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
+                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(**{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
+            df.to_excel(self.new_file_path, index=False)
+        else:
+            print('缺少数据')
 
     def get_u_field(self):
         field = list(self.frame_data.loc[:, '场号'])
@@ -185,7 +191,7 @@ class ReadExcel:
 
 
 if __name__ == "__main__":
-    project_byname = ['XYL']
+    project_byname = ['MOB', 'XYL']
     for byname in project_byname:
         ReadExcel().run(byname)
     print('complete')

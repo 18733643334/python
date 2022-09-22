@@ -275,14 +275,3 @@ import re, os
 # [nan 1 '001003' '双枫崖场景延伸\n人物闪现威亚擦除' nan 'ok' nan nan nan nan nan nan 'C'
 #  18 nan 18 '蝉影' nan nan nan '001_002718' 'mob001003_prd_cy_mov2k_v0101'
 #  nan nan 'mob001003_cmp_CYDH_pre_v0011' 20220913 nan nan nan]
-
-
-df5 = pd.read_excel('/Users/shihongxiao/Desktop/All/MOB/Doc/shot/mob_prd_lvbo_001shotInfo_v0103-2022\x1d0806.xlsx', header=8)
-df5 = np.array(df5)
-
-a = 0
-for i in df5:
-    if i[16] == '蝉影' and i[5] == 'ok':
-        a += 1
-
-print(a)

@@ -327,7 +327,8 @@ class Mob:
     def data_to_ex(self):
         if self.new_data:
             self.frame_data = pd.DataFrame(self.new_data,
-                                           columns=['场号', '公司名称', '镜头总数', '完成数', '未完成数', '完成进度']).sort_values(
+                                           columns=['场号', '公司名称', '镜头总数', '已提交数', '通过数', '未通过数', '未提交数',
+                                                    '完成进度']).sort_values(
                 by='场号')
             self.set_column_link()
             df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
@@ -353,7 +354,7 @@ class Mob:
         index_val = 0
         for d in self.new_data:
             field = d[0]
-            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}" % (self.file_path, field)
+            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}.+xlsx" % (self.file_path, field)
             for f in self.excel_files:
                 if re.match(rr, f):
                     ff = '/Volumes%s' % f

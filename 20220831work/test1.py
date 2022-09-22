@@ -94,47 +94,47 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re, os
 
-files = ['/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_031shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_021shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_011shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_002shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_012shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_022shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_032shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_024shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_029shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_039shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_034shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_009shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_004shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_014shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_019shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_017shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_007shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_006shotInfo_v0102.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_037shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_027shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_016shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_026shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_036shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_038shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_035shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_025shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_028shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_015shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_018shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_008shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_005shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_013shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_003shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_033shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_040shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_023shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_020shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_030shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_001shotInfo_v0102.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_000shotInfo_v0101.xlsx',
-         '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_010shotInfo_v0101.xlsx']
+# files = ['/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_031shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_021shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_011shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_002shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_012shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_022shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_032shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_024shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_029shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_039shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_034shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_009shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_004shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_014shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_019shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_017shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_007shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_006shotInfo_v0102.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_037shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_027shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_016shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_026shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_036shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_038shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_035shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_025shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_028shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_015shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_018shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_008shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_005shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_013shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_003shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_033shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_040shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_023shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_020shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_030shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_001shotInfo_v0102.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_000shotInfo_v0101.xlsx',
+#          '/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_010shotInfo_v0101.xlsx']
 
 # columns = [r'场号', r'公司名称', r'镜头总数', r'完成数', r'未完成数', 'Test_3']
 # 创建形状为（10，5） 的DataFrame 并设置二级标题
@@ -256,17 +256,17 @@ files = ['/Users/shihongxiao/Desktop/abc/shot/xyl_prd_wujh_031shotInfo_v0101.xls
 # plt.savefig('aaa.png')
 
 
-import sys, os
-
-files = os.listdir('/Users/shihongxiao/Desktop/All/MOB/Doc/shot')
-
-for f in files:
-    if '-' in f:
-        ff = f.split('-')
-        n_f_n = '{}.xlsx'.format(ff[0])
-        old_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(f)
-        new_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(n_f_n)
-        os.rename(old_n, new_n)
+# import sys, os
+#
+# files = os.listdir('/Users/shihongxiao/Desktop/All/MOB/Doc/shot')
+#
+# for f in files:
+#     if '-' in f:
+#         ff = f.split('-')
+#         n_f_n = '{}.xlsx'.format(ff[0])
+#         old_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(f)
+#         new_n = '/Users/shihongxiao/Desktop/All/MOB/Doc/shot/{}'.format(n_f_n)
+#         os.rename(old_n, new_n)
 
 # [nan '002' '002003' '擦鱼线' nan 'ok' nan nan nan nan nan nan 'D' nan nan 60
 #  '宇玺妍开' 'hd' nan nan nan '002_003316' 'mob002003_prd_hd_mov2k_v0101' nan
@@ -275,3 +275,14 @@ for f in files:
 # [nan 1 '001003' '双枫崖场景延伸\n人物闪现威亚擦除' nan 'ok' nan nan nan nan nan nan 'C'
 #  18 nan 18 '蝉影' nan nan nan '001_002718' 'mob001003_prd_cy_mov2k_v0101'
 #  nan nan 'mob001003_cmp_CYDH_pre_v0011' 20220913 nan nan nan]
+
+
+df5 = pd.read_excel('/Users/shihongxiao/Desktop/All/MOB/Doc/shot/mob_prd_lvbo_001shotInfo_v0103-2022\x1d0806.xlsx', header=8)
+df5 = np.array(df5)
+
+a = 0
+for i in df5:
+    if i[16] == '蝉影' and i[5] == 'ok':
+        a += 1
+
+print(a)

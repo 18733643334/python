@@ -99,11 +99,6 @@ class Excel:
                 new_company.append(c)
         return new_company
 
-    def set_style(self):
-        self.frame_data = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).applymap(
-            self.set_percentage_color, subset=['完成进度']).set_properties(
-            **{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
-
 
 class ReadExcel(Excel):
     def read_file(self):
@@ -202,11 +197,12 @@ class ReadExcel(Excel):
             self.frame_data = pd.DataFrame(self.new_data,
                                            columns=['场号', '公司名称', '镜头总数', '完成数', '未完成数', '完成进度']).sort_values(
                 by='场号')
-            self.set_column_link().set_style()
-            df = self.frame_data.set_properties(subset=['镜头总数'], **{
+            self.set_column_link()
+            df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
                 "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
                 "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度'])
+                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(
+                **{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
             df.to_excel(self.new_file_path, index=False)
         else:
             return False
@@ -325,20 +321,23 @@ class Mob(Excel):
                                            columns=['场号', '公司名称', '镜头总数', '已提交数', '通过数', '未通过数', '未提交数',
                                                     '完成进度']).sort_values(
                 by='场号')
-            self.set_column_link().set_style()
-            df = self.frame_data.set_properties(subset=['镜头总数'], **{
+            self.set_column_link()
+            df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
                 "background-color": "#FED563"}).set_properties(subset=['已提交数'], **{
                 "background-color": "#66A342"}).set_properties(subset=['未通过数'], **{
                 "background-color": "#FED563"}).set_properties(subset=['未提交数'], **{
                 "background-color": "#A020F0"
-            }).set_properties(**{"background-color": "#98FB98"}, subset=['通过数'])
+            }).set_properties(**{"background-color": "#98FB98"}, subset=['通过数']).applymap(self.set_percentage_color,
+                                                                                          subset=[
+                                                                                              '完成进度']).set_properties(
+                **{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
             df.to_excel(self.new_file_path, index=False)
         else:
             return False
 
 
 if __name__ == "__main__":
-    project_byname = ['XYL', 'MOB']
+    project_byname = ['XYL']
     for byname in project_byname:
         if byname == 'MOB':
             Mob().run(byname)

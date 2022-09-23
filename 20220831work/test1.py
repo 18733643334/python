@@ -256,10 +256,10 @@ import re, os
 # plt.savefig('aaa.png')
 
 
-# import sys, os
-#
-# files = os.listdir('/Users/shihongxiao/Desktop/All/MOB/Doc/shot')
-#
+import sys, os
+
+files = os.listdir('/Users/shihongxiao/Desktop/All/MOB/Doc/shot')
+
 # for f in files:
 #     if '-' in f:
 #         ff = f.split('-')
@@ -275,3 +275,10 @@ import re, os
 # [nan 1 '001003' '双枫崖场景延伸\n人物闪现威亚擦除' nan 'ok' nan nan nan nan nan nan 'C'
 #  18 nan 18 '蝉影' nan nan nan '001_002718' 'mob001003_prd_cy_mov2k_v0101'
 #  nan nan 'mob001003_cmp_CYDH_pre_v0011' 20220913 nan nan nan]
+
+for f in files:
+    rrr = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}'
+    rr = re.findall(rrr, f)
+    o_f = os.path.join('/Users/shihongxiao/Desktop/All/MOB/Doc/shot', f)
+    n_f_n = os.path.join('/Users/shihongxiao/Desktop/All/MOB/Doc/shot', '%s.xlsx' % rr[0])
+    os.rename(o_f, n_f_n)

@@ -208,6 +208,7 @@ class Mob:
         self.save_path = '/Users/shihongxiao/Desktop/All/%s/References/tmp/' % b_name
 
     def read_file(self):
+        self.checkout_f_n()
         file_names = os.listdir(self.file_path)
         if file_names:
             for file in file_names:
@@ -332,9 +333,13 @@ class Mob:
                 by='场号')
             self.set_column_link()
             df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
-                "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
-                "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(
+                "background-color": "#FED563"}).set_properties(subset=['已提交数'], **{
+                "background-color": "#66A342"}).set_properties(subset=['未通过数'], **{
+                "background-color": "#FED563"}).set_properties(subset=['未提交数'], **{
+                "background-color": "#A020F0"
+            }).set_properties(**{"background-color": "#98FB98"}, subset=['通过数']).applymap(self.set_percentage_color,
+                                                                                          subset=[
+                                                                                              '完成进度']).set_properties(
                 **{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
             df.to_excel(self.new_file_path, index=False)
         else:
@@ -370,7 +375,7 @@ class Mob:
         t = time.gmtime()
         date = time.strftime("%m-%d", t)
         name = 'outsource' + str(date)
-        self.new_file_path = self.save_path + '/%s.xlsx' % name
+        self.new_file_path = self.save_path + '%s.xlsx' % name
 
     def set_percentage_color(self, x):
         val = float(x[:-1])
@@ -387,6 +392,17 @@ class Mob:
         else:
             color = '#ffffff'
         return "background-color: {}".format(color)
+
+    def checkout_f_n(self):
+        files = os.listdir(self.file_path)
+        for f in files:
+            re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.+xlsx'
+            if re.match(re_str1, f):
+                rrr = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}'
+                rr = re.findall(rrr, f)
+                o_f = os.path.join(self.file_path, f)
+                n_f_n = os.path.join(self.file_path, '%s.xlsx' % rr[0])
+                os.rename(o_f, n_f_n)
 
 
 if __name__ == "__main__":

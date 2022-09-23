@@ -121,8 +121,8 @@ class Excel:
                 arr.append(i['fail_num'])
                 shot_not_submit_num += i['not_submit']
                 arr.append(i['not_submit'])
-                progress = round(i['adopt_num'] / i['total_num'], 2) * 100
-                progress = int(progress)
+                #progress = round(i['adopt_num'] / i['total_num'], 2) * 100
+                progress = int((i['adopt_num'] / i['total_num']) * 10000) / 100
                 progress = "%s%%" % progress
                 arr.append(progress)
                 data.append(arr)

@@ -90,6 +90,14 @@ class Excel:
                     self.frame_data._set_value(index_val, '场号', '=HYPERLINK("{}", "{}")'.format(ff, field))
             index_val += 1
 
+    def company_names(self, c_data):
+        company = list(set(c_data))
+        new_company = []
+        for c in company:
+            if not pd.isna(c):
+                new_company.append(c)
+        return new_company
+
 
 class ReadExcel(Excel):
     def read_file(self):
@@ -139,12 +147,7 @@ class ReadExcel(Excel):
 
     def get_company(self, e_data):
         company = e_data[:, 17]
-        company = list(set(company))
-        new_company = []
-        for c in company:
-            if not pd.isna(c):
-                new_company.append(c)
-        return new_company
+        return self.company_names(company)
 
     def create_data_frame(self):
         if self.company_data:
@@ -224,7 +227,7 @@ class Mob(Excel):
         if not self.excel_files:
             self.company_data = []
         for excel_file in self.excel_files:
-            excel_data = pd.read_excel(excel_file, header=10, dtype=object)
+            excel_data = pd.read_excel(excel_file, header=8, dtype=object)
             excel_data = excel_data.dropna(axis=0, how='all')
             excel_array = np.array(excel_data)[:-1]
             if len(excel_array) == 0:
@@ -260,12 +263,7 @@ class Mob(Excel):
 
     def get_company(self, e_data):
         company = e_data[:, 16]
-        company = list(set(company))
-        new_company = []
-        for c in company:
-            if not pd.isna(c):
-                new_company.append(c)
-        return new_company
+        return self.company_names(company)
 
     def create_data_frame(self):
         if self.company_data:
@@ -338,7 +336,7 @@ class Mob(Excel):
 
 
 if __name__ == "__main__":
-    project_byname = ['XYL']
+    project_byname = ['XYL', 'MOB']
     for byname in project_byname:
         if byname == 'MOB':
             Mob().run(byname)

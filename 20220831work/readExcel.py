@@ -83,7 +83,7 @@ class Excel:
         index_val = 0
         for d in self.new_data:
             field = d[0]
-            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}.+xlsx" % (self.file_path, field)
+            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}[.]{1}xlsx$" % (self.file_path, field)
             for f in self.excel_files:
                 if re.match(rr, f):
                     ff = '/Volumes%s' % f
@@ -113,7 +113,7 @@ class ReadExcel(Excel):
                 file_list = file.split('.')
                 extension = file_list[-1]
                 if extension in extensions:
-                    re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.{1}xl'
+                    re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}[.]{1}xlsx$'
                     if re.match(re_str1, file):
                         self.excel_files.append(os.path.join(self.file_path, file))
         else:
@@ -203,11 +203,10 @@ class ReadExcel(Excel):
                                            columns=['场号', '公司名称', '镜头总数', '完成数', '未完成数', '完成进度']).sort_values(
                 by='场号')
             self.set_column_link().set_style()
-            df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
+            df = self.frame_data.set_properties(subset=['镜头总数'], **{
                 "background-color": "#FED563"}).set_properties(subset=['完成数'], **{
                 "background-color": "#66A342"}).set_properties(subset=['未完成数'], **{
-                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度']).set_properties(
-                **{"font-size": "30px", "border-color": '#FFFF2E', "color": '#ec0790'})
+                "background-color": "#FED563"}).applymap(self.set_percentage_color, subset=['完成进度'])
             df.to_excel(self.new_file_path, index=False)
         else:
             return False
@@ -222,7 +221,7 @@ class Mob(Excel):
                 file_list = file.split('.')
                 extension = file_list[-1]
                 if extension in extensions:
-                    re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.+xlsx'
+                    re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}[.]{1}xlsx$'
                     if re.match(re_str1, file):
                         self.excel_files.append(os.path.join(self.file_path, file))
         else:

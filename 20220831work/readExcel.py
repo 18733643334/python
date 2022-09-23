@@ -8,7 +8,7 @@ import re, time
 extensions = ['xlsx', 'xls']
 
 
-class ReadExcel:
+class E:
     def __init__(self):
         self.new_file_path = ''
         self.file_path = ''
@@ -24,6 +24,74 @@ class ReadExcel:
         self.file_path = '/Users/shihongxiao/Desktop/All/%s/Doc/shot/' % b_name
         self.save_path = '/Users/shihongxiao/Desktop/All/%s/References/tmp/' % b_name
 
+    def get_field_num(self, e_file):
+        e_file_name = os.path.basename(e_file)
+        result = re.findall(r"_\d{3}", e_file_name)
+        result = result[0]
+        field = result[1:]
+        return field
+
+    def set_field_color(self, col):
+        u_field = self.get_u_field()
+        if col in u_field:
+            return "background-color: #FFFF2E"
+
+    def create_file_path(self):
+        t = time.gmtime()
+        date = time.strftime("%m-%d", t)
+        name = 'outsource' + str(date)
+        self.new_file_path = self.save_path + '%s.xlsx' % name
+
+    def set_percentage_color(self, x):
+        val = float(x[:-1])
+        if (val > 0) and (val <= 20):
+            color = '#BFE2AF'
+        elif (val > 20) and (val <= 40):
+            color = '#a3ebaa'
+        elif (val > 40) and (val <= 60):
+            color = '#70f3ff'
+        elif (val > 60) and (val <= 80):
+            color = '#44cef6'
+        elif (val > 80) and (val <= 100):
+            color = '#93C2EA'
+        else:
+            color = '#ffffff'
+        return "background-color: {}".format(color)
+
+    def checkout_f_n(self):
+        files = os.listdir(self.file_path)
+        for f in files:
+            re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.+xlsx'
+            if re.match(re_str1, f):
+                rrr = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}'
+                rr = re.findall(rrr, f)
+                o_f = os.path.join(self.file_path, f)
+                n_f_n = os.path.join(self.file_path, '%s.xlsx' % rr[0])
+                os.rename(o_f, n_f_n)
+
+    def get_u_field(self):
+        field = list(self.frame_data.loc[:, '场号'])
+        s_field = set(field)
+        u_field = []
+        for s in s_field:
+            if field.count(s) > 1:
+                u_field.append(s)
+        u_field = np.unique(np.array(u_field))
+        return u_field
+
+    def set_column_link(self):
+        index_val = 0
+        for d in self.new_data:
+            field = d[0]
+            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}.+xlsx" % (self.file_path, field)
+            for f in self.excel_files:
+                if re.match(rr, f):
+                    ff = '/Volumes%s' % f
+                    self.frame_data._set_value(index_val, '场号', '=HYPERLINK("{}", "{}")'.format(ff, field))
+            index_val += 1
+
+
+class ReadExcel(E):
     def read_file(self):
         file_names = os.listdir(self.file_path)
         if file_names:
@@ -77,13 +145,6 @@ class ReadExcel:
             if not pd.isna(c):
                 new_company.append(c)
         return new_company
-
-    def get_field_num(self, e_file):
-        e_file_name = os.path.basename(e_file)
-        result = re.findall(r"_\d{3}", e_file_name)
-        result = result[0]
-        field = result[1:]
-        return field
 
     def create_data_frame(self):
         if self.company_data:
@@ -142,71 +203,8 @@ class ReadExcel:
         else:
             return False
 
-    def get_u_field(self):
-        field = list(self.frame_data.loc[:, '场号'])
-        s_field = set(field)
-        u_field = []
-        for s in s_field:
-            if field.count(s) > 1:
-                u_field.append(s)
-        u_field = np.unique(np.array(u_field))
-        return u_field
 
-    def set_column_link(self):
-        index_val = 0
-        for d in self.new_data:
-            field = d[0]
-            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}.xl" % (self.file_path, field)
-            for f in self.excel_files:
-                if re.match(rr, f):
-                    ff = '/Volumes%s' % f
-                    self.frame_data._set_value(index_val, '场号', '=HYPERLINK("{}", "{}")'.format(ff, field))
-            index_val += 1
-
-    def set_field_color(self, col):
-        u_field = self.get_u_field()
-        if col in u_field:
-            return "background-color: #FFFF2E"
-
-    def create_file_path(self):
-        t = time.gmtime()
-        date = time.strftime("%m-%d", t)
-        name = 'outsource' + str(date)
-        self.new_file_path = self.save_path + '/%s.xlsx' % name
-
-    def set_percentage_color(self, x):
-        val = float(x[:-1])
-        if (val > 0) and (val <= 20):
-            color = '#BFE2AF'
-        elif (val > 20) and (val <= 40):
-            color = '#a3ebaa'
-        elif (val > 40) and (val <= 60):
-            color = '#70f3ff'
-        elif (val > 60) and (val <= 80):
-            color = '#44cef6'
-        elif (val > 80) and (val <= 100):
-            color = '#93C2EA'
-        else:
-            color = '#ffffff'
-        return "background-color: {}".format(color)
-
-
-class Mob:
-    def __init__(self):
-        self.new_file_path = ''
-        self.file_path = ''
-        self.excel_new_data = np.array([])
-        self.excel_files = []
-        self.company_data = []
-        self.new_data = []
-        self.frame_data = []
-        self.root_path = ''
-        self.save_path = ''
-
-    def set_file(self, b_name):
-        self.file_path = '/Users/shihongxiao/Desktop/All/%s/Doc/shot/' % b_name
-        self.save_path = '/Users/shihongxiao/Desktop/All/%s/References/tmp/' % b_name
-
+class Mob(E):
     def read_file(self):
         self.checkout_f_n()
         file_names = os.listdir(self.file_path)
@@ -268,13 +266,6 @@ class Mob:
             if not pd.isna(c):
                 new_company.append(c)
         return new_company
-
-    def get_field_num(self, e_file):
-        e_file_name = os.path.basename(e_file)
-        result = re.findall(r"_\d{3}", e_file_name)
-        result = result[0]
-        field = result[1:]
-        return field
 
     def create_data_frame(self):
         if self.company_data:
@@ -345,68 +336,9 @@ class Mob:
         else:
             return False
 
-    def get_u_field(self):
-        field = list(self.frame_data.loc[:, '场号'])
-        s_field = set(field)
-        u_field = []
-        for s in s_field:
-            if field.count(s) > 1:
-                u_field.append(s)
-        u_field = np.unique(np.array(u_field))
-        return u_field
-
-    def set_column_link(self):
-        index_val = 0
-        for d in self.new_data:
-            field = d[0]
-            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}.+xlsx" % (self.file_path, field)
-            for f in self.excel_files:
-                if re.match(rr, f):
-                    ff = '/Volumes%s' % f
-                    self.frame_data._set_value(index_val, '场号', '=HYPERLINK("{}", "{}")'.format(ff, field))
-            index_val += 1
-
-    def set_field_color(self, col):
-        u_field = self.get_u_field()
-        if col in u_field:
-            return "background-color: #FFFF2E"
-
-    def create_file_path(self):
-        t = time.gmtime()
-        date = time.strftime("%m-%d", t)
-        name = 'outsource' + str(date)
-        self.new_file_path = self.save_path + '%s.xlsx' % name
-
-    def set_percentage_color(self, x):
-        val = float(x[:-1])
-        if (val > 0) and (val <= 20):
-            color = '#BFE2AF'
-        elif (val > 20) and (val <= 40):
-            color = '#a3ebaa'
-        elif (val > 40) and (val <= 60):
-            color = '#70f3ff'
-        elif (val > 60) and (val <= 80):
-            color = '#44cef6'
-        elif (val > 80) and (val <= 100):
-            color = '#93C2EA'
-        else:
-            color = '#ffffff'
-        return "background-color: {}".format(color)
-
-    def checkout_f_n(self):
-        files = os.listdir(self.file_path)
-        for f in files:
-            re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.+xlsx'
-            if re.match(re_str1, f):
-                rrr = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}'
-                rr = re.findall(rrr, f)
-                o_f = os.path.join(self.file_path, f)
-                n_f_n = os.path.join(self.file_path, '%s.xlsx' % rr[0])
-                os.rename(o_f, n_f_n)
-
 
 if __name__ == "__main__":
-    project_byname = ['MOB']
+    project_byname = ['XYL']
     for byname in project_byname:
         if byname == 'MOB':
             Mob().run(byname)

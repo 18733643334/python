@@ -8,7 +8,7 @@ import re, time
 extensions = ['xlsx', 'xls']
 
 
-class E:
+class Excel:
     def __init__(self):
         self.new_file_path = ''
         self.file_path = ''
@@ -91,7 +91,7 @@ class E:
             index_val += 1
 
 
-class ReadExcel(E):
+class ReadExcel(Excel):
     def read_file(self):
         file_names = os.listdir(self.file_path)
         if file_names:
@@ -204,7 +204,7 @@ class ReadExcel(E):
             return False
 
 
-class Mob(E):
+class Mob(Excel):
     def read_file(self):
         self.checkout_f_n()
         file_names = os.listdir(self.file_path)

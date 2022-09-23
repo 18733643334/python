@@ -53,7 +53,7 @@ class Excel:
         elif (val > 60) and (val <= 80):
             color = '#44cef6'
         elif (val > 80) and (val <= 100):
-            color = '#93C2EA'
+            color = '#00FF00'
         else:
             color = '#ffffff'
         return "background-color: {}".format(color)
@@ -121,8 +121,9 @@ class Excel:
                 arr.append(i['fail_num'])
                 shot_not_submit_num += i['not_submit']
                 arr.append(i['not_submit'])
-                #progress = round(i['adopt_num'] / i['total_num'], 2) * 100
                 progress = int((i['adopt_num'] / i['total_num']) * 10000) / 100
+                if int(progress) == 100:
+                    progress = 100
                 progress = "%s%%" % progress
                 arr.append(progress)
                 data.append(arr)
@@ -151,7 +152,7 @@ class Excel:
             df = self.frame_data.style.applymap(self.set_field_color, subset=['场号']).set_properties(subset=['镜头总数'], **{
                 "background-color": "#FED563"}).set_properties(subset=['已提交数'], **{
                 "background-color": "#98FB98"}).set_properties(subset=['未通过数'], **{
-                "background-color": "#121212"}).set_properties(subset=['未提交数'], **{
+                "background-color": "#555555"}).set_properties(subset=['未提交数'], **{
                 "background-color": "#A020F0"
             }).set_properties(**{"background-color": "#7FFF00"}, subset=['通过数']).applymap(self.set_percentage_color,
                                                                                           subset=[

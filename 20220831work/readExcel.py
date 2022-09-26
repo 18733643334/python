@@ -157,6 +157,7 @@ class Excel:
             }).set_properties(**{"background-color": "#7FFF00"}, subset=['通过数']).applymap(self.set_percentage_color,
                                                                                           subset=[
                                                                                               '完成进度']).set_properties(
+                subset=['公司名称'], **{"background-color": '#8B6914'}).set_properties(
                 **{"font-size": "30px", "color": '#ec0790'})
             df.to_excel(self.new_file_path, index=False)
         else:

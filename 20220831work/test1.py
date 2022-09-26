@@ -286,3 +286,14 @@ import sys, os
 
 # a = 0.9994
 # a = int(a * 10000) / 100
+
+# 合并单元格
+
+data = {
+    "场号": ('001', '001', '002', '002'),
+    "公司名称": ("YY", "QY", "YY", "QY"),
+    "完成数": (12, 234, 12, 234)
+}
+df = pd.DataFrame(data)
+df1 = df.set_index(['场号', '公司名称'])
+df1.to_excel('aaa.xlsx')

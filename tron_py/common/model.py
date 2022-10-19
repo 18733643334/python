@@ -86,9 +86,15 @@ class Model:
 
     def where(self, field, op, val):
         if self.__where_str:
-            self.__where_str += " and `%s` %s '%s'" % (field, op, val)
+            if op == 'in':
+                self.__where_str += " and `%s` %s (%s)" % (field, op, val)
+            else:
+                self.__where_str += " and `%s` %s '%s'" % (field, op, val)
         else:
-            self.__where_str = "where `%s` %s '%s'" % (field, op, val)
+            if op == 'in':
+                self.__where_str = "where `%s` %s (%s)" % (field, op, val)
+            else:
+                self.__where_str = "where `%s` %s '%s'" % (field, op, val)
         return self
 
     def field(self, field):

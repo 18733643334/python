@@ -105,6 +105,8 @@ class Model:
                 self.sql = "select %s from %s" % (self.field_str, self.__table)
             elif self.ex_type == 'update':
                 self.sql = "update %s set %s" % (self.__table, self.update_str)
+            elif self.ex_type == 'count':
+                self.sql = "select count('*') as num from %s" % (self.__table)
             if self.__where_str:
                 self.sql = "%s %s" % (self.sql, self.__where_str)
             if self.limit:
@@ -139,7 +141,6 @@ class Model:
 
         self.update_str = k_v_str[:-1]
         self.__createSql()
-        print(self.sql)
         return self.db.updateDb(self.sql)
 
     def create(self, data):
@@ -168,6 +169,11 @@ class Model:
             return data[0]
         else:
             return []
+
+    def count(self):
+        self.ex_type = 'count'
+        self.__createSql()
+        return self.db.find(self.sql)
 
     def get_columns(self):
         show_column = "show full columns from %s" % self.__table

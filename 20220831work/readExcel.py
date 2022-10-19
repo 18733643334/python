@@ -61,7 +61,7 @@ class Excel:
     def checkout_f_n(self):
         files = os.listdir(self.file_path)
         for f in files:
-            re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}.+xlsx'
+            re_str1 = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}\.xlsx'
             if re.match(re_str1, f):
                 rrr = '^[a-z]{3}_[a-z]{3}_[a-zA-Z]+_[0-9]{3}shotInfo_v[0-9]{4}'
                 rr = re.findall(rrr, f)
@@ -83,7 +83,7 @@ class Excel:
         index_val = 0
         for d in self.new_data:
             field = d[0]
-            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}[.]{1}xlsx$" % (self.file_path, field)
+            rr = "^%s[a-z]{3}_[a-z]{3}_[a-zA-Z]+_%sshotInfo_v[0-9]{4}\.xlsx$" % (self.file_path, field)
             for f in self.excel_files:
                 if re.match(rr, f):
                     ff = '/Volumes%s' % f

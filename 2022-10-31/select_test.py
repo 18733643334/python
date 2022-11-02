@@ -9,6 +9,10 @@ class ComBox(QWidget):
 	def __init__(self, parent=None):
 		self.selected_data = ''
 		super(ComBox, self).__init__(parent)
+		self.create_win()
+		
+		
+	def create_win(self):
 		self.setWindowTitle("测试窗口")
 		self.resize(500, 400)
 		layout = QVBoxLayout()
@@ -20,7 +24,6 @@ class ComBox(QWidget):
 		layout.addWidget(QLabel("选择日期"))
 		layout.addWidget(self.select)
 		
-		
 		# 复选框
 		rb_task = QRadioButton('任务')
 		rb_version = QRadioButton("版本")
@@ -31,7 +34,6 @@ class ComBox(QWidget):
 		layout.addWidget(rb_task)
 		layout.addWidget(rb_version)
 		layout.addWidget(rb_shot)
-
 		
 		self.label1 = QLabel("")
 		layout.addWidget(self.label1)

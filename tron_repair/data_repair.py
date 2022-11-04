@@ -37,9 +37,14 @@ def main(res_type):
             tache_status = tache_columns[tache_id]
             current_tache_status = d[tache_status]
             if task_status:
-                if current_tache_status != tache_status:
-                    print(tache_status)
-                    raise SystemExit()
+                select_task_status = task_status['status']
+                if current_tache_status != select_task_status:
+                    update_sql = '''
+                        update oa_res_relation set %s = %s where id = %s
+                    ''' % (tache_status, select_task_status, d['id'])
+                    print(update_sql)
+    raise SystemExit()
+
 
 
 if __name__ == '__main__':

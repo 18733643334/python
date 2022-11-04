@@ -4,7 +4,7 @@ import pymongo
 
 clint = pymongo.MongoClient('mongodb://127.0.0.1:27017/')
 
-base = clint['tron']
+base = clint['tron_repair']
 
 tables = base.list_collection_names()
 

@@ -11,29 +11,28 @@ class ComBox(QWidget):
 		super(ComBox, self).__init__(parent)
 		self.create_win()
 		
-		
 	def create_win(self):
 		self.setWindowTitle("测试窗口")
 		self.resize(500, 400)
 		layout = QVBoxLayout()
 		self.select = QComboBox()
 		
-		dates = ["2022-12", "2022-11", "2022-10", "2022-09"]
+		dates = ["请选择", "2022-12", "2022-11", "2022-10", "2022-09"]
 		self.select.addItems(dates)
 		self.select.currentIndexChanged.connect(self.selected)
 		layout.addWidget(QLabel("选择日期"))
 		layout.addWidget(self.select)
 		
 		# 复选框
-		rb_task = QRadioButton('任务')
-		rb_version = QRadioButton("版本")
-		rb_shot = QRadioButton("镜头")
-		rb_task.setChecked(True)
+		self.rb_task = QRadioButton('任务')
+		self.rb_version = QRadioButton("版本")
+		self.rb_shot = QRadioButton("镜头")
+		self.rb_task.setChecked(True)
 		
 		layout.addWidget(QLabel("选择类型"))
-		layout.addWidget(rb_task)
-		layout.addWidget(rb_version)
-		layout.addWidget(rb_shot)
+		layout.addWidget(self.rb_task)
+		layout.addWidget(self.rb_version)
+		layout.addWidget(self.rb_shot)
 		
 		self.label1 = QLabel("")
 		layout.addWidget(self.label1)
@@ -47,13 +46,16 @@ class ComBox(QWidget):
 	def clickButton(self):
 		print('被点击了')
 		print(self.selected_data)
+		if self.rb_version.isChecked():
+			self.checked = '版本'
+		elif self.rb_task.isChecked():
+			self.checked = '任务'
+		elif self.rb_shot.isChecked():
+			self.checked = '镜头'
+		self.label1.setText('{}类型为[{}]'.format(self.select.currentText()), self.checked)
 
 	def selected(self):
-		self.label1.setText('选择的是{}'.format(self.select.currentText()))
 		self.selected_data = self.select.currentText()
-		
-	def checked(self):
-		pass
 
 
 if __name__ == '__main__':

@@ -43,7 +43,6 @@ def main(res_type):
                         update oa_res_relation set %s = %s where id = %s
                     ''' % (tache_status, select_task_status, d['id'])
                     print(update_sql)
-    raise SystemExit()
 
 
 
